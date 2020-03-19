@@ -1,0 +1,180 @@
+/* í…ìŠ¤íŠ¸ ê³µí†µ */
+.txt {
+	font-size: 15px;
+	color: #606060;
+	font-weight: 400;
+	line-height: 2;
+}
+
+.txt_b {
+	font-size: 30px;
+	color: #404040;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.sign {
+	text-align: right;
+}
+
+.cnt_area {
+	display: block;
+	overflow: hidden;
+}
+
+.cnt_area>header {
+	display: none;
+}
+
+.map_box {
+	height: 433px;
+	overflow: hidden;
+}
+
+.map_size {
+	width: 100% !important;
+}
+
+.add_box {
+	display: block;
+	list-style: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.add_box>li {
+	display: block;
+	float: left;
+	margin-right: 40px;
+	padding-right: 40px;
+	background: url('../../images/sub/add_box_bg.gif') no-repeat right
+		center;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.add_box>li .title {
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #404040;
+	font-weight: 400;
+}
+
+.add_box>li .cnt {
+	font-size: 15px;
+	color: #606060;
+	font-weight: 400;
+}
+
+.add_box>li:nth-child(1) {
+	
+}
+
+.add_box>li:nth-child(2) {
+	
+}
+
+.add_box>li:nth-child(3) {
+	
+}
+
+.add_box>li:nth-child(4) {
+	float: right;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	background-image: none;
+}
+
+.organ {
+	position: relative;
+	display: block;
+	min-height: 456px;
+	text-align: center;
+	background: url('../../images/sub/organ_bg.gif') no-repeat center top;
+	overflow: hidden;
+}
+
+.organ .box1 {
+	display: block;
+	margin: 0 auto;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.organ .box2 {
+	position: absolute;
+	display: block;
+	left: 68%;
+	top: 104px;
+	width: 212px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.organ .box2>.title {
+	padding: 20px 0;
+	font-size: 18px;
+	color: #fff;
+	background: #0061d8;
+}
+
+.organ .box2>.txt {
+	padding: 15px 0;
+	font-size: 15px;
+	color: #606060;
+	background: #fff;
+	border: 1px solid #dbdbdb;
+}
+
+.organ .box3 {
+	position: absolute;
+	display: block;
+	list-style: none;
+	left: 0;
+	right: 0;
+	top: 270px;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+}
+
+.organ .box3>li {
+	display: block;
+	float: left;
+	width: 212px;
+	margin-right: 20px;
+	overflow: hidden;
+}
+
+.organ .box3>li:nth-last-child(1) {
+	margin-right: 0;
+}
+
+.organ .box3>li>p {
+	padding: 20px 0;
+	font-size: 18px;
+	color: #fff;
+	background: #2fb3d2;
+}
+
+.organ .box3>li>ul {
+	display: block;
+	list-style: none;
+	min-height: 115px;
+	margin: 0;
+	padding: 10px 0;
+	background: #fff;
+	border: 1px solid #cacace;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.organ .box3>li>ul>li {
+	display: block;
+	padding: 8px 0;
+	color: #606060;
+}

@@ -1,0 +1,78 @@
+@charset "EUC-KR";
+
+/* #floatMenu */
+#floatMenu {
+	/*position: absolute;
+	top: 32%;
+	right: 1%;*/
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	z-index: 1000;
+}
+
+#floatMenu ul {
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+#floatMenu li {
+	margin: 3px 0px;
+	width: fit-content;
+	height: fit-content;
+	border-radius: 50%;
+	border: 1px solid #f2f2f2;
+	background-color: #ffffff;
+}
+
+#floatMenu a {
+	margin: 0 auto;
+	display: block;
+	width: 35px;
+	height: 35px;
+	-webkit-background-size: 70%;
+	-moz-background-size: 70%;
+	-o-background-size: 70%;
+	background-size: 65%;
+	background-repeat: no-repeat;
+	background-position: center
+}
+
+a.home {
+	background-image: url("../assets/img/float/home.png");
+}
+
+a.up {
+	background-image: url("../assets/img/float/up.png");
+}
+
+a.join {
+	background-image: url("../assets/img/float/join.png");
+}
+
+a.mypage {
+	background-image: url("../assets/img/float/mypage.png");
+}
+
+a.login {
+	background-image: url("../assets/img/float/login.png");
+}
+
+a.logout {
+	background-image: url("../assets/img/float/logout.png");
+}
+
+a.down {
+	background-image: url("../assets/img/float/down.png");
+}
+
+.no_drag {
+	color: #959595;
+	font-size: 9pt;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
