@@ -66,6 +66,19 @@ input[type=text]:placeholder {
 	text-align: center;
 }
 
+.join_form {
+	text-align: left;
+}
+
+.join_form_inner {
+	padding: 10px;
+}
+
+.join_font {
+	padding-left: 16px;
+	padding-bottom: 3px;
+}
+
 p.hidden {
 	display: none;
 }

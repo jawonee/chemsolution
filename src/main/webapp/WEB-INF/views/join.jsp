@@ -96,13 +96,33 @@
 					<div class="s0101_top_box">
 						<div class="text_box form_div">
 							<h5 class="info_msg">REGISETER</h5>
-							<form action="user" method="POST">
+							<form class="join_form" action="user" method="POST">
 								<input type="hidden" name="_method" value="PUT">
-								ID <input type="text" class="login" name="id" placeholder="ID">
-								PASSWORD <input type="password" class="login" name="password" placeholder="PASSWORD">
-								NAME <input type="text" class="login" name="name" placeholder="NAME">
-								TEL <input type="text" class="login" name="tel" placeholder="TEL">
-								E-MAIL <input type="text" class="login" name="email" placeholder="E-MAIL">
+								<div class="join_form_inner">
+								    <label for="id"><font class="join_font">ID</font> 
+								        <input type="text" class="login" name="id" id="id" placeholder="ID">
+								    </label>
+								</div>
+								<div class="join_form_inner">
+								    <label for="password"><font class="join_font">PASSWORD</font>
+								        <input type="password" class="login" name="password" id="password" placeholder="PASSWORD">
+								    </label>
+							    </div>
+								<div class="join_form_inner">
+								    <label for="name"><font class="join_font">NAME</font>
+								        <input type="text" class="login" name="name" id ="name" placeholder="NAME">
+								    </label>
+								</div>
+								<div class="join_form_inner">
+								    <label for="tel"><font class="join_font">TEL</font>
+								        <input type="text" class="login" name="tel" id="tel" placeholder="TEL">
+								    </label>
+								</div>
+								<div class="join_form_inner">
+								    <label for="email"><font class="join_font">E-MAIL</font>
+								        <input type="text" class="login" name="email" id="email" placeholder="E-MAIL">
+								    </label>
+								</div>
 								<input type="submit" class="fadeIn fourth" value="JOIN">
 							</form>
 						</div>
