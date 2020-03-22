@@ -975,3 +975,7 @@ article.s0101 {
     margin-left: auto;
     margin-right: auto;
 }
+
+span.path {
+	text-transform:uppercase;
+}

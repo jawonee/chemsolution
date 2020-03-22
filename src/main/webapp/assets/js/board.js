@@ -1,8 +1,8 @@
-//$(document).ready(function() {
-//	(function() {
-//		changeCategory(0);
-//	})();
-//
+$(document).ready(function() {
+	(function() {
+		changeCategory(0);
+	})();
+
 //	$('.anchor').on("click", function() {
 //		var category = $(event.currentTarget).parent().attr('data-category');
 //		if ($('.current').attr('data-category') != category) {
@@ -11,7 +11,7 @@
 //			$("[data-category=" + category + "]").addClass('current');
 //		}
 //	});
-//});
+});
 //
 //function changeCategory(category) {
 //	jQuery.ajax({
