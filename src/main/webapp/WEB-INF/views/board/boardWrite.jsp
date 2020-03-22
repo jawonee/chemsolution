@@ -20,67 +20,8 @@
 <link rel="stylesheet" type="text/css" href="css/float.css">
 </head>
 <body>
-	<!-- floating menu -->
-	<div id="floatMenu">
-		<ul>
-			<li><a class="home" title="home" href="../website"></a></li>
-			<c:choose>
-				<c:when test="${empty sessionScope.loginUser}">
-					<li><a class="join" title="join" href="join"></a></li>
-					<li><a class="login" title="login" href="login"></a></li>
-				</c:when>
-				<c:otherwise>
-					<li><a class="mypage" title="my page" href="mypage"></a></li>
-					<li><a class="logout" title="logout" href="user/logout"></a></li>
-				</c:otherwise>
-			</c:choose>
-			<li><a class="up" title="up" href="javascript:goToTop()"></a></li>
-			<li><a class="down" title="down" href="javascript:goToBottom()"></a></li>
-		</ul>
-	</div>
-	<header id="header">
-		<div id="header_box">
-			<div id="logo">
-				<h1>
-					<a href="../website"> <img src="img/main_logo.png">
-					</a>
-				</h1>
-			</div>
-			<nav class="header_nav">
-				<ul>
-					<li><a href="about">ABOUT US</a></li>
-					<li><a href="product">PRODUCTS</a>
-						<ul>
-							<li><a href="s2/s2_1.php">AROMATIC SOLVENT</a></li>
-							<li><a href="s2/s2_2_1.php">ALIPHATIC HYDROCARBON</a></li>
-							<li><a href="s2/s2_3.php">PETROLEUM SOLVENT</a></li>
-							<li><a href="s2/s2_4.php">LUBE BASE OIL</a></li>
-							<li><a href="s2/s2_5.php">SYNTHETIC RESIN</a></li>
-							<li><a href="s2/s2_6.php">ADDITIVE</a></li>
-							<li><a href="s2/s2_7.php">LUBRICANT ADDITVE</a></li>
-							<li><a href="s2/s2_8.php">ELECTRONIC SOLVENT</a></li>
-							<li><a href="s2/s2_9.php">ABRASIVE</a></li>
-						</ul></li>
-					<li><a href="contact">CONTACT US</a></li>
-					<li><c:choose>
-							<c:when test="${empty sessionScope.loginUser}">
-								<a href="login">COMMUNITY</a>
-							</c:when>
-							<c:otherwise>
-								<a href="board">COMMUNITY</a>
-							</c:otherwise>
-						</c:choose>
-						<ul>
-							<li><a href="board/notice">NOTICE</a></li>
-							<li><a href="board/business">BUSINESS Q&A</a></li>
-							<li><a href="board/product">PRODDUCT Q&A</a></li>
-							<li><a href="board/etc">ETC</a></li>
-						</ul></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
+	<c:import url="/WEB-INF/views/menu/floating_menu.jsp"></c:import>
+    <c:import url="/WEB-INF/views/menu/header_nav.jsp"></c:import>
 	<div id="sub_visual"></div>
 	<div id="sub_layout">
 		<div id="ln_area">

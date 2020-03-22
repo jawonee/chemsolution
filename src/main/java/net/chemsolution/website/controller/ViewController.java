@@ -5,6 +5,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ViewController {
+	/* 
+	 * 모듈화된 메뉴 페이지
+	 */
+	@GetMapping(path="floating_menu")
+	String showFloatingMenu() {
+		return "floating_menu";
+	}
+
 	@GetMapping(path = "/about")
 	String showAboutUsPage() {
 		return "about";
@@ -19,7 +27,7 @@ public class ViewController {
 	String showContactUsPage() {
 		return "contact";
 	}
-
+	
 	@GetMapping(path = "/board")
 	String showCommunityPage() {
 		 return "redirect:/board/notice";
@@ -29,14 +37,17 @@ public class ViewController {
 	String showJoinPage() {
 		return "user/join";
 	}
+	
 	@GetMapping(path = "/success")
 	String showSuccessPage() {
 		return "user/success";
 	}
+	
 	@GetMapping(path = "/login")
 	String showLoginPage() {
 		return "user/login";
 	}
+	
 	@GetMapping(path = "/boardWrite")
 	String showBoardPage() {
 		return "board/boardWrite";
