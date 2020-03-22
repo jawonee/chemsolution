@@ -70,7 +70,13 @@
 							<c:otherwise>
 								<a href="board">COMMUNITY</a>
 							</c:otherwise>
-						</c:choose></li>
+						</c:choose>
+						<ul>
+							<li><a href="board/notice">NOTICE</a></li>
+							<li><a href="board/business">BUSINESS Q&A</a></li>
+							<li><a href="board/product">PRODDUCT Q&A</a></li>
+							<li><a href="board/etc">ETC</a></li>
+						</ul></li>
 				</ul>
 			</nav>
 		</div>
@@ -97,7 +103,6 @@
 						<div class="text_box form_div">
 							<h5 class="info_msg">REGISETER</h5>
 							<form action="user" method="POST">
-								<input type="hidden" name="_method" value="PUT">
 								ID <input type="text" class="login" name="id" placeholder="ID">
 								PASSWORD <input type="password" class="login" name="password" placeholder="PASSWORD">
 								NAME <input type="text" class="login" name="name" placeholder="NAME">

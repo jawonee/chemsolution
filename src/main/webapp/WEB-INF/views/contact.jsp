@@ -68,7 +68,13 @@
 							<c:otherwise>
 								<a href="board">COMMUNITY</a>
 							</c:otherwise>
-						</c:choose></li>
+						</c:choose>
+						<ul>
+							<li><a href="board/notice">NOTICE</a></li>
+							<li><a href="board/business">BUSINESS Q&A</a></li>
+							<li><a href="board/product">PRODDUCT Q&A</a></li>
+							<li><a href="board/etc">ETC</a></li>
+						</ul></li>
 				</ul>
 			</nav>
 		</div>

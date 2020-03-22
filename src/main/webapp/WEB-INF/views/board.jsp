@@ -72,10 +72,10 @@
 							</c:otherwise>
 						</c:choose>
 						<ul>
-							<li><a href="notice" class="anchor">NOTICE</a></li>
-							<li><a href="business" class="anchor">BUSINESS Q&A</a></li>
-							<li><a href="product" class="anchor">PRODDUCT Q&A</a></li>
-							<li><a href="etc" class="anchor">ETC</a></li>
+							<li><a href="notice">NOTICE</a></li>
+							<li><a href="business">BUSINESS Q&A</a></li>
+							<li><a href="product">PRODDUCT Q&A</a></li>
+							<li><a href="etc">ETC</a></li>
 						</ul></li>
 				</ul>
 			</nav>
@@ -98,7 +98,8 @@
 				<h3 class="h3_label">COMMUNITY</h3>
 				<div class="process">
 					<span class="home">HOME</span> <span class="arrow"><img
-						src="img/arrow.png" alt="" /></span> <span class="path">COMMUNITY</span>
+						src="img/arrow.png" alt="" /></span> <span class="path">COMMUNITY</span><span class="arrow"><img
+						src="img/arrow.png" alt="" /></span> <span class="path">${catName}</span>
 				</div>
 				<article class="s0101 clear">
 					<div class="s0101_top_box">
@@ -115,16 +116,15 @@
 								</li>
 								<c:forEach items="${boardList}" var="list">
 
-									<li class="list_item"><a href="#">
-											<ul class="item_info">
+									<li class="list_item"><ul class="item_info"><a href="#">
+											
 												<li class="q_id">${list.id }</li>
 												<li class="q_category">${list.categoryName }</li>
 												<li class="q_subject">${list.subject }</li>
-												<li class="q_content">${list.content }</li>
 												<li class="q_memberId">${list.memberId }</li>
 												<li class="q_date">${list.createDate }</li>
-											</ul>
-									</a></li>
+											
+									</a></ul></li>
 								</c:forEach>
 							</ul>
 							<c:forEach var="pageCount" begin="1" end="${pageCount}">

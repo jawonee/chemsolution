@@ -69,7 +69,13 @@
 							<c:otherwise>
 								<a href="board">COMMUNITY</a>
 							</c:otherwise>
-						</c:choose></li>
+						</c:choose>
+						<ul>
+							<li><a href="board/notice">NOTICE</a></li>
+							<li><a href="board/business">BUSINESS Q&A</a></li>
+							<li><a href="board/product">PRODDUCT Q&A</a></li>
+							<li><a href="board/etc">ETC</a></li>
+						</ul></li>
 				</ul>
 			</nav>
 		</div>
@@ -80,8 +86,7 @@
 		<div id="ln_area">
 			<h2 class="h2_label">COMMUNITY</h2>
 			<ul class="ln">
-				<li class="current"><a href="board">ALL</a></li>
-				<li><a href="board/notice">NOTICE</a></li>
+				<li class="current"><a href="board/notice">NOTICE</a></li>
 				<li><a href="board/business">BUSINESS Q&A</a></li>
 				<li><a href="board/product">PRODDUCT Q&A</a></li>
 				<li><a href="board/etc">ETC</a></li>
@@ -98,18 +103,19 @@
 					<div class="s0101_top_box">
 						<div class="text_box join_div">
 						<h5 class="info_msg">Enter your question.</h5>
-							<form class="form_area" action="user" method="POST">
+							<form class="form_area" action="board/submit" method="POST">
 								<select name="categoryId" size="1">
 									<option value="1">notice</option>
 									<option value="2">business Q&A</option>
 									<option value="3">product Q&A</option>
 									<option value="4">etc</option>
 								</select>
-								<textarea class="q_text" name="content"></textarea>
-							<div class="btn_area">
-								<button class ="form_btn" onClick="location.href='javascript:history.back()'">Cancel</button>
-								<button id ="write_btn" class ="form_btn">WRITE</button>
-							</div>
+								<input type="text" class="q_subject" name="subject" placeholder="subject"></input>
+								<textarea class="q_content" name="content" placeholder="content.."></textarea>
+								<div class="btn_area">
+									<button class="form_btn" onClick="location.href='javascript:history.back()'">Cancel</button>
+									<input type="submit" id="write_btn" class="form_btn" value="WRITE"></input>
+								</div>
 							</form>
 						</div>
 					</div>

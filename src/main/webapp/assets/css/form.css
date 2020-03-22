@@ -33,7 +33,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active,
 	transform: scale(0.95);
 }
 
-input[class=login], textarea.q_text {
+input[class=login], .form_area>.q_content, .form_area>.q_subject {
 	background-color: #f6f6f6;
 	border: none;
 	color: #0d0d0d;
@@ -53,7 +53,8 @@ input[class=login], textarea.q_text {
 	border-radius: 3px 3px 3px 3px;
 }
 
-input[type=text]:focus, textarea.q_text:focus {
+input[type=text]:focus, .form_area>.q_content:focus, .form_area>.q_subject:focus
+	{
 	background-color: #fff;
 	border-bottom: 2px solid #5fbae9;
 }
@@ -95,18 +96,27 @@ p.auth_msg {
 	font-size: 9pt;
 }
 
-.form_area>textarea.q_text {
+.form_area>.q_subject {
+	width: 725px;
+	height: fit-content;
+	padding: 12px 10px;
+}
+
+.form_area>.q_content {
 	padding: 10px;
-	margin: 8px 0px;
 	width: 97%;
 	height: 200px;
 	resize: none;
 }
 
+.form_area>.q_content, .form_area>.q_subject {
+	margin: 5px 0;
+}
+
 .form_area>select {
-	width: 200px;
-	font-size: 11pt;
-	padding: 5px 10px;
+	width: 140px;
+	padding: 6px;
+	margin-right: 5px
 }
 
 .join_div .info_msg {
