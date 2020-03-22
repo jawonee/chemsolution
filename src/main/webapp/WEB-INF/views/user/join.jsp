@@ -103,7 +103,6 @@
 						<div class="text_box form_div">
 							<h5 class="info_msg">REGISETER</h5>
 							<form class="join_form" action="user" method="POST">
-								<input type="hidden" name="_method" value="PUT">
 								<div class="join_form_inner">
 								    <label for="id"><font class="join_font">ID</font> 
 								        <input type="text" class="login" name="id" id="id" placeholder="ID">

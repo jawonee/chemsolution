@@ -81,15 +81,15 @@
 					<li><a href="about">ABOUT US</a></li>
 					<li><a href="product">PRODUCTS</a>
 						<ul>
-							<li><a href="s2/s2_1.php">AROMATIC SOLVENT</a></li>
-							<li><a href="s2/s2_2_1.php">ALIPHATIC HYDROCARBON</a></li>
-							<li><a href="s2/s2_3.php">PETROLEUM SOLVENT</a></li>
-							<li><a href="s2/s2_4.php">LUBE BASE OIL</a></li>
-							<li><a href="s2/s2_5.php">SYNTHETIC RESIN</a></li>
-							<li><a href="s2/s2_6.php">ADDITIVE</a></li>
-							<li><a href="s2/s2_7.php">LUBRICANT ADDITVE</a></li>
-							<li><a href="s2/s2_8.php">ELECTRONIC SOLVENT</a></li>
-							<li><a href="s2/s2_9.php">ABRASIVE</a></li>
+							<li><a href="s2/s2_1.jsp">AROMATIC SOLVENT</a></li>
+							<li><a href="s2/s2_2_1.jsp">ALIPHATIC HYDROCARBON</a></li>
+							<li><a href="s2/s2_3.jsp">PETROLEUM SOLVENT</a></li>
+							<li><a href="s2/s2_4.jsp">LUBE BASE OIL</a></li>
+							<li><a href="s2/s2_5.jsp">SYNTHETIC RESIN</a></li>
+							<li><a href="s2/s2_6.jsp">ADDITIVE</a></li>
+							<li><a href="s2/s2_7.jsp">LUBRICANT ADDITVE</a></li>
+							<li><a href="s2/s2_8.jsp">ELECTRONIC SOLVENT</a></li>
+							<li><a href="s2/s2_9.jsp">ABRASIVE</a></li>
 						</ul></li>
 					<li><a href="contact">CONTACT US</a></li>
 					<li><c:choose>

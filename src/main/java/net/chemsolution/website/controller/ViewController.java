@@ -27,18 +27,18 @@ public class ViewController {
 	
 	@GetMapping(path = "/join")
 	String showJoinPage() {
-		return "join";
+		return "user/join";
 	}
 	@GetMapping(path = "/success")
 	String showSuccessPage() {
-		return "success";
+		return "user/success";
 	}
 	@GetMapping(path = "/login")
 	String showLoginPage() {
-		return "login";
+		return "user/login";
 	}
 	@GetMapping(path = "/boardWrite")
 	String showBoardPage() {
-		return "boardWrite";
+		return "board/boardWrite";
 	}
 }
