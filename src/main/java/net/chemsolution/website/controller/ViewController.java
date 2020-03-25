@@ -2,17 +2,13 @@ package net.chemsolution.website.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class ViewController {
 	@GetMapping(path = "/about")
 	String showAboutUsPage() {
 		return "about";
-	}
-
-	@GetMapping(path = "/product")
-	String showProductPage() {
-		return "product";
 	}
 
 	@GetMapping(path = "/contact")
@@ -50,4 +46,13 @@ public class ViewController {
 		return "board/boardWrite";
 	}
 
+	@GetMapping(path = "/product")
+	String showProductPage() {
+		return "redirect:/product/s2_1";
+	}
+
+	@GetMapping(path = "/product/{name}")
+	String showProductItemPage(@PathVariable("name") String name) {
+		return "product/" + name;
+	}
 }

@@ -7,17 +7,15 @@
 <meta charset="utf-8">
 <title>chemsolution</title>
 <meta name="description" content="용제,가소제부산물,윤활유,합성수지,연마제">
-<meta name="google-site-verification"
-	content="3SrFVjVVVis-4IHnIQKO3WyeSGkc6DqUGmQfoOq9aZ8" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<meta name="google-site-verification" content="3SrFVjVVVis-4IHnIQKO3WyeSGkc6DqUGmQfoOq9aZ8" />
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/float.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+<script	src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script type="text/javascript" src="../../js/float.js"></script>
+<script type="text/javascript" src="../../js/comment.js"></script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
 <link rel="stylesheet" type="text/css" href="../../css/form.css">
 <link rel="stylesheet" type="text/css" href="../../css/layout.css">
 <link rel="stylesheet" type="text/css" href="../../css/sub.css">
@@ -47,19 +45,34 @@
 					</span> <span class="path">COMMUNITY</span>
 				</div>
 				<article class="s0101 clear">
-					<div class="s0101_top_box">
-						<div class="text_box join_div">
+					<div class="s0101_top_box join_div">
+						<div class="q_content">
 							<p>${boardItem.id }</p>
 							<p>${boardItem.memberId }</p>
 							<p>${boardItem.categoryId }</p>
 							<p>${boardItem.subject }</p>
 							<p>${boardItem.content }</p>
 							<p>${boardItem.createDate }</p>
-							<div class="btn_area">
-								<button class="form_btn" onClick="location.href='javascript:history.back()'">back</button>
-								<button class="form_btn" onClick="location.href='../${boardItem.id }/delete'">delete</button>
-								<button class="form_btn" onClick="location.href='../${boardItem.id }/modify'">modify</button>
-							</div>
+						</div>
+						<br>
+						<div id="comment_area">
+							<ul class=comment_list>
+							</ul>
+						</div>
+						<c:choose>
+							<c:when test="${sessionScope.loginUser.grade eq 1 && boardItem.answerFlag eq 0}">
+								<div id="comment_write_area">
+									<form class="comment_form">
+										<textarea class="c_content" name="content" cols="100" rows="5"></textarea>
+										<input type="submit" class="write_btn" value="write">
+									</form>
+								</div>
+							</c:when>
+						</c:choose>
+						<div class="btn_area">
+							<button class="form_btn" onClick="location.href='javascript:history.back()'">back</button>
+							<button class="form_btn" onClick="location.href='../${boardItem.id }/delete'">delete</button>
+							<button class="form_btn" onClick="location.href='../${boardItem.id }/modify'">modify</button>
 						</div>
 					</div>
 				</article>
@@ -81,5 +94,13 @@
 	</div>
 	<a href="http://chemsolution.net/s3/s3_1.php?device=mobile"
 		id="device_change">모바일 버전으로 보기</a>
+		
+	<script type="rv-template" id="commentItem">
+        <li class="item">
+			<p class="c_id">{{memberId}}
+			<p class="c_content">{{content}}
+			<p class="c_date">{{modifyDate}}
+        </li>
+    </script>
 </body>
 </html>

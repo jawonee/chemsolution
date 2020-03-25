@@ -56,8 +56,7 @@
 									</ul>
 								</li>
 								<c:forEach items="${boardList}" var="list">
-									<li class="list_item">
-										<a href="${catName}/${list.id }">
+									<li class="list_item"><a href="${catName}/${list.id }">
 											<ul class="item_info">
 												<li class="q_id">${list.id }</li>
 												<li class="q_category">${list.categoryName }</li>
@@ -65,17 +64,21 @@
 												<li class="q_memberId">${list.memberId }</li>
 												<li class="q_date">${list.createDate }</li>
 											</ul>
-										</a>
-									</li>
+									</a></li>
 								</c:forEach>
 							</ul>
 							<c:forEach var="pageCount" begin="1" end="${pageCount}">
 								<a href="?page=${pageCount}">${pageCount}</a>
 							</c:forEach>
 							<div class="btn_area">
-								<button class="board_btn"
-									onClick="location.href='../boardWrite'">Write</button>
 								<button class="board_btn" onClick="location.href='#'">Search</button>
+								<c:choose>
+									<c:when test="${sessionScope.loginUser.grade eq 0 && catName eq 'notice'}">
+									</c:when>
+									<c:otherwise>
+										<button class="board_btn" onClick="location.href='../boardWrite'">Write</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>

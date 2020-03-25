@@ -24,8 +24,8 @@ public class UserApiController {
 	UserService userService;
 
 	@PostMapping(value = "/auth")
-	public Map<String, Boolean> checkUserInfo(@ModelAttribute UserDto loginUser, HttpSession session,
-			HttpServletResponse response) throws IOException {
+	public Map<String, Boolean> checkUserInfo(@ModelAttribute UserDto loginUser, HttpSession session)
+			throws IOException {
 		Map<String, Boolean> map = new HashMap<String, Boolean>();
 		UserDto user = userService.getUserInfo(loginUser);
 		if (user != null) {

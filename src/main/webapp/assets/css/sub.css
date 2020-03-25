@@ -823,7 +823,6 @@ table2_9_2>thead>tr>td:first-child {
 }
 
 #sub_layout {
-	text-transform: uppercase;
 	display: block;
 	width: auto;
 	max-width: 1200px;

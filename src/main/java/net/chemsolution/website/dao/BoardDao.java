@@ -4,6 +4,7 @@ import static net.chemsolution.website.dao.DaoSqls.DELETE_BOARD_ITEM;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_BOARD_ITEM;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_BOARD_LIST;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_COUNT;
+import static net.chemsolution.website.dao.DaoSqls.UPDATE_ANSWER_FLAG;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -52,15 +53,19 @@ public class BoardDao {
 		Map<String, ?> params = Collections.singletonMap("boardNo", boardNo);
 		return jdbc.queryForObject(SELECT_BOARD_ITEM, params, rowMapper);
 	}
-	
+
 	public int deleteBoardItem(int boardNo) {
 		Map<String, ?> params = Collections.singletonMap("boardNo", boardNo);
 		return jdbc.update(DELETE_BOARD_ITEM, params);
 	}
 
 	public void insertQuestion(BoardDto question) {
-		question.setAnswerFlag(0);
 		SqlParameterSource param = new BeanPropertySqlParameterSource(question);
 		insertAction.execute(param);
+	}
+
+	public int updateAnswerFlag(int boardNo) {
+		Map<String, ?> params = Collections.singletonMap("boardNo", boardNo);
+		return jdbc.update(UPDATE_ANSWER_FLAG, params);
 	}
 }

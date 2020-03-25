@@ -58,6 +58,7 @@ public class BoardController {
 	public String submitQuestion(@ModelAttribute BoardDto question, HttpSession session) throws IOException {
 		UserDto loginUser = (UserDto) session.getAttribute("loginUser");
 		question.setMemberId(loginUser.getId());
+		question.setAnswerFlag(0);
 		boardService.submitQuestion(question);
 		return "redirect:/board";
 	}
