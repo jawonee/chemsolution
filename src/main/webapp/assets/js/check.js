@@ -43,7 +43,8 @@ function checkValidation() {
 	// }
 	// validCheckFlag = false;
 
-	if (this.value == "") {
+	if (this.event == "keyup" && this.value == "") {
+		validCheckFlag = false;
 		return false;
 	}
 
@@ -65,11 +66,8 @@ function checkValidation() {
 				validCheckFlag = true;
 			}
 			$(checkKey).parent().children("span.valid_msg").text(valid.msg);
-			$(checkKey).parent().children("img.valid_result").removeClass(
-					"hidden");
-			$(checkKey).parent().children("img.valid_result").attr("src",
-					valid.src);
-
+			$(checkKey).parent().children("img.valid_result").removeClass("hidden");
+			$(checkKey).parent().children("img.valid_result").attr("src", valid.src);
 		},
 		error : function(xhr, status, error) {
 			alert("Input Validation check Error");

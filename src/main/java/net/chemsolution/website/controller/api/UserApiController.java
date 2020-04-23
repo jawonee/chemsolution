@@ -36,21 +36,14 @@ public class UserApiController {
 		}
 	}
 
-//	@GetMapping(value = "/join/duplicateCheck")
-//	public boolean CheckIdDuplicate(@RequestParam("id") String id) {
-//		return userService.checkIdDuplicatie(id);
-//	}
-
-	@PostMapping(value = "/join/validCheck") // , produces = "text/json;charset=UTF-8")
+	@PostMapping(value = "/join/validCheck")
 	public Map<String, Object> validateInputValue(@RequestBody Map<String, String> input) {
-
 		String key = input.get("key");
 		String value = input.get("value");
-		String idValid = "^[A-Za-z0-9]{4,16}$";
-		String pValid = "^[A-Za-z0-9]{4,16}$";
-		String nValid = "^[가-힣]{2,10}$";
-		String tValid = "^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-([0-9]{3,4})-([0-9]{4})$";
-		String eValid = "^([0-9a-zA-Z_\\.-]+)@([0-9a-zA-Z_-]+)(\\.[0-9a-zA-Z_-]+){1,2}$";
+		String idAndPassReg = "^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{4,16}$";
+		String nReg = "^[가-힣]{2,10}$";
+		String tReg = "^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-([0-9]{3,4})-([0-9]{4})$";
+		String eReg = "^([0-9a-zA-Z_\\.-]+)@([0-9a-zA-Z_-]+)(\\.[0-9a-zA-Z_-]+){1,2}$";
 
 		Map<String, Object> map = new HashMap<String, Object>();
 		switch (key) {
@@ -58,28 +51,28 @@ public class UserApiController {
 			if (userService.checkIdDuplicatie(value)) {
 				map.put("msg", "이미 사용중인 아이디 입니다.");
 			} else {
-				if (!Pattern.compile(idValid).matcher(value).matches()) {
-					map.put("msg", "영문소문자/숫자, 4~16자");
+				if (!Pattern.compile(idAndPassReg).matcher(value).matches()) {
+					map.put("msg", "영문소문자/숫자 조합, 4~16자");
 				}
 			}
 			break;
 		case "password":
-			if (!Pattern.compile(pValid).matcher(value).matches()) {
-				map.put("msg", "영문소문자/숫자, 4~16자");
+			if (!Pattern.compile(idAndPassReg).matcher(value).matches()) {
+				map.put("msg", "영문소문자/숫자 조합, 4~16자");
 			}
 			break;
 		case "name":
-			if (!Pattern.compile(nValid).matcher(value).matches()) {
+			if (!Pattern.compile(nReg).matcher(value).matches()) {
 				map.put("msg", "한글 2~10자");
 			}
 			break;
 		case "tel":
-			if (!Pattern.compile(tValid).matcher(value).matches()) {
+			if (!Pattern.compile(tReg).matcher(value).matches()) {
 				map.put("msg", "010 - ***(*) - **** 형식");
 			}
 			break;
 		case "email":
-			if (!Pattern.compile(eValid).matcher(value).matches()) {
+			if (!Pattern.compile(eReg).matcher(value).matches()) {
 				map.put("msg", "***@***.*** 형식");
 			}
 			break;
@@ -99,11 +92,11 @@ public class UserApiController {
 		 * "영문소문자/숫자, 4~16자"; } else { return "사용 가능한 아이디 입니다."; } } case "password": if
 		 * (!Pattern.compile(pValid).matcher(value).matches()) { return
 		 * "영문소문자/숫자, 4~16자"; } break; case "name": if
-		 * (!Pattern.compile(nValid).matcher(value).matches()) { return "한글 2~10자"; }
-		 * break; case "tel": if (!Pattern.compile(tValid).matcher(value).matches()) {
+		 * (!Pattern.compile(nReg).matcher(value).matches()) { return "한글 2~10자"; }
+		 * break; case "tel": if (!Pattern.compile(tReg).matcher(value).matches()) {
 		 * return "010 - ***(*) - **** 형식"; } break; case "email": if
-		 * (!Pattern.compile(eValid).matcher(value).matches()) { return
-		 * "***@***.*** 형식"; } break; } return null;
+		 * (!Pattern.compile(eReg).matcher(value).matches()) { return "***@***.*** 형식";
+		 * } break; } return null;
 		 */
 	}
 }
