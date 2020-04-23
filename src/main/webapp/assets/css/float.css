@@ -40,31 +40,31 @@
 }
 
 a.home {
-	background-image: url("../assets/img/float/home.png");
+	background-image: url("/website/assets/img/float/home.png");
 }
 
 a.up {
-	background-image: url("../assets/img/float/up.png");
+	background-image: url("/website/assets/img/float/up.png");
 }
 
 a.join {
-	background-image: url("../assets/img/float/join.png");
+	background-image: url("/website/assets/img/float/join.png");
 }
 
 a.mypage {
-	background-image: url("../assets/img/float/mypage.png");
+	background-image: url("/website/assets/img/float/mypage.png");
 }
 
 a.login {
-	background-image: url("../assets/img/float/login.png");
+	background-image: url("/website/assets/img/float/login.png");
 }
 
 a.logout {
-	background-image: url("../assets/img/float/logout.png");
+	background-image: url("/website/assets/img/float/logout.png");
 }
 
 a.down {
-	background-image: url("../assets/img/float/down.png");
+	background-image: url("/website/assets/img/float/down.png");
 }
 
 .no_drag {

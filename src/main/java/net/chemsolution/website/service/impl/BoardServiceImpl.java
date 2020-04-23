@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.chemsolution.website.dao.BoardDao;
+import net.chemsolution.website.dao.CommentDao;
 import net.chemsolution.website.dto.BoardDto;
 import net.chemsolution.website.service.BoardService;
 
@@ -13,6 +15,8 @@ import net.chemsolution.website.service.BoardService;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	BoardDao boardDao;
+	@Autowired
+	CommentDao commentDao;
 
 	@Override
 	public int getCount(String catName) {
@@ -20,8 +24,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardDto> getBoardList(String catName, int page) {
-		return boardDao.selectBoardList(catName, page);
+	public List<BoardDto> getBoardList(String catName, int page, String key, String value) {
+		return boardDao.selectBoardList(catName, page, key, value);
 	}
 
 	@Override
@@ -30,13 +34,20 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void submitQuestion(BoardDto question) {
-		boardDao.insertQuestion(question);
+	public int submitQuestion(BoardDto question) {
+		return boardDao.insertQuestion(question);
 	}
 
 	@Override
+	@Transactional
 	public int deleteBoardItem(int boradNo) {
+		commentDao.deleteComment(boradNo);
 		return boardDao.deleteBoardItem(boradNo);
-		
+
+	}
+
+	@Override
+	public int modifyBoardItem(BoardDto question) {
+		return boardDao.updateBoardItem(question);
 	}
 }

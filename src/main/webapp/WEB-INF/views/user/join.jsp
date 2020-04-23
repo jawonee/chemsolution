@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -10,15 +10,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/float.js"></script>
-<script type="text/javascript" src="js/auth.js"></script>
+<script type="text/javascript" src="js/check.js"></script>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
 <link rel="stylesheet" type="text/css" href="css/layout.css">
 <link rel="stylesheet" type="text/css" href="css/sub.css">
 <link rel="stylesheet" type="text/css" href="css/etc.css">
 <link rel="stylesheet" type="text/css" href="css/form.css">
-<link rel="stylesheet" type="text/css" href="css/float.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/menu/floating_menu.jsp"></c:import>
@@ -41,15 +39,54 @@
 
 				<article class="s0101 clear">
 					<div class="s0101_top_box">
-						<div class="text_box form_div">
+						<div class="form_div">
 							<h5 class="info_msg">REGISETER</h5>
-							<form action="user" method="POST">
-								ID <input type="text" class="login" name="id" placeholder="ID">
-								PASSWORD <input type="password" class="login" name="password" placeholder="PASSWORD">
-								NAME <input type="text" class="login" name="name" placeholder="NAME">
-								TEL <input type="text" class="login" name="tel" placeholder="TEL">
-								E-MAIL <input type="text" class="login" name="email" placeholder="E-MAIL">
-								<input type="submit" class="fadeIn fourth" value="JOIN">
+							<form class="join_form" action="user" method="POST">
+								<table>
+									<tr>
+										<th><span class="form_group">ID</span></th>
+										<td>
+											<input type="text" class="join" name="id" placeholder="ID">
+											<img class="valid_result hidden" src="">
+											<span class="valid_msg">영문소문자/숫자 조합, 4~16자</span>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="form_group">PASSWORD</span></th>
+										<td>
+											<input type="password" class="join" name="password" placeholder="PASSWORD">
+											<img class="valid_result hidden" src="">
+											<span class="valid_msg">영문소문자/숫자  조합, 8자~16자</span>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="form_group">NAME</span></th>
+										<td>
+											<input type="text" class="join" name="name" placeholder="NAME">
+											<img class="valid_result hidden" src="">
+											<span class="valid_msg">한글 2~10자</span>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="form_group">TEL</span></th>
+										<td>
+											<input type="text" class="join" name="tel" placeholder="TEL">
+											<img class="valid_result hidden" src="">
+											<span class="valid_msg">010-***(*)-**** 형식</span>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="form_group">EMAIL</span></th>
+										<td>
+											<input type="text" class="join" name="email" placeholder="E-MAIL">
+											<img class="valid_result hidden" src="">
+											<span class="valid_msg">***@***.*** 형식</span>
+										</td>
+									</tr>
+
+								</table>
+								<!-- <input type="button" class="join_btn" onclick="window.history.back()" value="cancel"></input> -->
+								<input type="submit" class="join_btn" value="join">
 							</form>
 						</div>
 					</div>

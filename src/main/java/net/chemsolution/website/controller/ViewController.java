@@ -1,5 +1,8 @@
 package net.chemsolution.website.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,24 +19,16 @@ public class ViewController {
 		return "contact";
 	}
 
-	@GetMapping(path = "/join")
-	String showJoinPage() {
-		return "user/join";
-	}
-
-	@GetMapping(path = "/success")
-	String showSuccessPage() {
-		return "user/success";
-	}
-
-	@GetMapping(path = "/login")
-	String showLoginPage() {
-		return "user/login";
-	}
-
-	@GetMapping(path = "/mypage")
-	String showMyPage() {
-		return "user/mypage";
+	@GetMapping(path = { "/join", "/success", "/login", "/mypage" })
+	String showUserPage(HttpServletRequest res, HttpSession session) {
+		String requestPath = res.getServletPath();
+		if (session.getAttribute("loginUser") != null && !requestPath.contains("mypage")) {
+			return "redirect:/";
+		} else if (session.getAttribute("loginUser") == null && requestPath.contains("mypage")) {
+			return "redirect:/login";
+		} else {
+			return "user" + requestPath;
+		}
 	}
 
 	@GetMapping(path = "/board")
@@ -46,13 +41,26 @@ public class ViewController {
 		return "board/boardWrite";
 	}
 
-	@GetMapping(path = "/product")
-	String showProductPage() {
-		return "redirect:/product/s2_1";
+	@GetMapping(path = { "/product", "/product/{name}" })
+	String showProductsPage(@PathVariable(name = "name", required = false) String name) {
+		if (name == null) {
+			return "redirect:/product/s2_1";
+		} else {
+			return "product/" + name;
+		}
 	}
 
-	@GetMapping(path = "/product/{name}")
-	String showProductItemPage(@PathVariable("name") String name) {
-		return "product/" + name;
+	@GetMapping(path = "/prevPage")
+	String showPrevPage(HttpSession session) {
+		try {
+			String prevPage = session.getAttribute("prevPage").toString();
+			session.removeAttribute("prevPage");
+			if (prevPage.contains("join")) {
+				return "redirect:/";
+			}
+			return "redirect:" + prevPage;
+		} catch (NullPointerException e) {
+			return "redirect:/";
+		}
 	}
 }

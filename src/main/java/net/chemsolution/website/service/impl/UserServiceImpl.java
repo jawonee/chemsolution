@@ -11,6 +11,11 @@ import net.chemsolution.website.service.UserService;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
+	
+	@Override
+	public boolean checkIdDuplicatie(String id) {
+		return userDao.selectUserId(id);
+	}
 
 	@Override
 	public UserDto getUserInfo(UserDto loginUser) {
@@ -22,5 +27,4 @@ public class UserServiceImpl implements UserService {
 		return userDao.insertUserInfo(newUser);
 
 	}
-
 }

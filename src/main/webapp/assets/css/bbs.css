@@ -7,13 +7,11 @@
 	font-size: 13px;
 }
 
-/* ê²Œì‹œíŒ ì œëª© */
 .h2_bbs_label {
 	display: none;
 	overflow: hidden;
 }
 
-/* ê²Œì‹œíŒ : ì¹´í…Œê³ ë¦¬ ì˜µì…˜ */
 .category_option {
 	box-sizing: border-box;
 	border: 1px solid red;
@@ -24,7 +22,6 @@
 	display: none;
 }
 
-/* ìƒí™© ì˜ì—­ */
 .state_area {
 	margin-bottom: 10px;
 	box-sizing: border-box;
@@ -70,14 +67,12 @@
 	overflow: hidden;
 }
 
-/* ì²´í¬ë°•ìŠ¤ ì˜µì…˜ */
 .checkbox_option {
 	display: none;
 	border: 1px solid blue;
 	overflow: hidden;
 }
 
-/* ë²„íŠ¼ ì˜ì—­ */
 .btn_area {
 	display: block;
 	box-sizing: border-box;
@@ -106,7 +101,6 @@
 	overflow: hidden;
 }
 
-/* ë²„íŠ¼ */
 .btn_normal {
 	display: inline-block;
 	min-width: 80px;
@@ -122,7 +116,6 @@
 	cursor: pointer;
 }
 
-/* ê²€ìƒ‰ ì˜ì—­ */
 .search_box {
 	display: block;
 	margin: 20px 0 0;
@@ -183,7 +176,6 @@
 	vertical-align: middle;
 }
 
-/* ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ í…Œì´ë¸” */
 .table_outline {
 	display: block;
 	margin-bottom: 20px;
@@ -286,7 +278,6 @@
 	vertical-align: middle;
 }
 
-/* ê°¤ëŸ¬ë¦¬ ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ */
 .gallery_area {
 	display: block;
 	list-style: none;
@@ -391,7 +382,6 @@
 	text-align: center;
 }
 
-/* ê²Œì‹œíŒ ë·° */
 .view_title {
 	display: block;
 	padding: 10px 10px;
@@ -439,7 +429,6 @@
 	margin: 0;
 }
 
-/* ì²¨ë¶€íŒŒì¼ */
 .file_area {
 	display: block;
 	overflow: hidden;
@@ -470,7 +459,7 @@
 	margin-right: 10px;
 }
 
-/* ë§í¬íŒŒì¼ */
+/* 챘짠혖챠혖짭챠흸흸챙혶쩌 */
 .link_area {
 	display: block;
 	overflow: hidden;
@@ -501,7 +490,6 @@
 	margin-right: 10px;
 }
 
-/* ê¸€ë³´ê¸° */
 .read_area {
 	min-height: 300px;
 	margin: 20px 0;
@@ -513,7 +501,6 @@
 	display: none;
 }
 
-/* ê°œì¸ì •ë³´ ìˆ˜ì§‘.ì´ìš© ë¸”ë¡ ì •ì˜ */
 .p_agree_box {
 	display: block;
 	margin-bottom: 40px;

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -7,21 +6,15 @@
 <meta charset="utf-8">
 <title>chemsolution</title>
 <meta name="description" content="용제,가소제부산물,윤활유,합성수지,연마제">
-<meta name="google-site-verification"
-	content="3SrFVjVVVis-4IHnIQKO3WyeSGkc6DqUGmQfoOq9aZ8" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<meta name="google-site-verification" content="3SrFVjVVVis-4IHnIQKO3WyeSGkc6DqUGmQfoOq9aZ8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="../js/float.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css">
 <link rel="stylesheet" type="text/css" href="../css/sub.css">
 <link rel="stylesheet" type="text/css" href="../css/etc.css">
-<link rel="stylesheet" type="text/css" href="../css/float.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/menu/floating_menu.jsp"></c:import>
@@ -79,20 +72,19 @@
 						<li></li>
 					</ul>
 				</div>
-
 				<table class="table2_2_2">
 					<thead>
 						<tr>
 							<td>Grade</td>
-							<td>Distillation<br>Range(â)
+							<td>Distillation<br>Range(℃)
 							</td>
-							<td colspan="2">Flash Point<br>(TCC/ COC, â)
+							<td colspan="2">Flash Point<br>(TCC/ COC, ℃)
 							</td>
-							<td>Sp.Gr.<br>(60/60â)
+							<td>Sp.Gr.<br>(60/60℉)
 							</td>
-							<td>Viscosity<br>(@40â, cSt)
+							<td>Viscosity<br>(@40℃, cSt)
 							</td>
-							<td>Aniline<br>Point(â)
+							<td>Aniline<br>Point(℃)
 							</td>
 							<td>Color<br>(ALPHA)
 							</td>
@@ -121,7 +113,7 @@
 						<td>0.7</td>
 						<td>58</td>
 						<td>+30</td>
-						<td>0.1â</td>
+						<td>0.1↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD13</td>
@@ -132,7 +124,7 @@
 						<td>0.83</td>
 						<td>62</td>
 						<td>+30</td>
-						<td>0.1â</td>
+						<td>0.1↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD15</td>
@@ -143,7 +135,7 @@
 						<td>1.0</td>
 						<td>65</td>
 						<td>+30</td>
-						<td>0.1â</td>
+						<td>0.1↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD20</td>
@@ -154,7 +146,7 @@
 						<td>1.8</td>
 						<td>73</td>
 						<td>+30</td>
-						<td>0.1â</td>
+						<td>0.1↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD24</td>
@@ -165,7 +157,7 @@
 						<td>2.5</td>
 						<td>76</td>
 						<td>+30</td>
-						<td>0.1â</td>
+						<td>0.1↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD26</td>
@@ -176,7 +168,7 @@
 						<td>3.3</td>
 						<td>82</td>
 						<td>+30</td>
-						<td>0.1â</td>
+						<td>0.1↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD28</td>
@@ -187,7 +179,7 @@
 						<td>4.5</td>
 						<td>78</td>
 						<td>+30</td>
-						<td>4â</td>
+						<td>4↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD28H</td>
@@ -198,7 +190,7 @@
 						<td>4.5</td>
 						<td>85</td>
 						<td>+30</td>
-						<td>0.1â</td>
+						<td>0.1↓</td>
 					</tr>
 					<tr>
 						<td class="color1">CD32</td>

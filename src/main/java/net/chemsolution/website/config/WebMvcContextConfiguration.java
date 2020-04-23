@@ -6,10 +6,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import net.chemsolution.website.interceptor.LogInterceptor;
+import net.chemsolution.website.interceptor.LoginInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -47,5 +51,11 @@ public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
 		org.springframework.web.multipart.commons.CommonsMultipartResolver multipartResolver = new org.springframework.web.multipart.commons.CommonsMultipartResolver();
 		multipartResolver.setMaxUploadSize(10485760); // 1024 * 1024 * 0 (10MBytes)
 		return multipartResolver;
+	}
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/login/**").addPathPatterns("/board/**").addPathPatterns("/boardWrite/**");
+		registry.addInterceptor(new LogInterceptor());
 	}
 }

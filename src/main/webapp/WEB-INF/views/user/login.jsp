@@ -10,16 +10,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/float.js"></script>
-<script type="text/javascript" src="js/auth.js"></script>
+<script type="text/javascript" src="js/check.js"></script>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
-<link rel="stylesheet" type="text/css" href="css/form.css">
 <link rel="stylesheet" type="text/css" href="css/layout.css">
 <link rel="stylesheet" type="text/css" href="css/sub.css">
 <link rel="stylesheet" type="text/css" href="css/etc.css">
-<link rel="stylesheet" type="text/css" href="css/float.css">
-
+<link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/menu/floating_menu.jsp"></c:import>
@@ -44,12 +41,12 @@
 					<div class="s0101_top_box">
 						<div class="text_box form_div">
 							<h5 class="info_msg">Please enter your ID and password.</h5>
-							<form class="login_form" action="user/auth" method ="post">
+							<form class="login_form">
 								<input type="text" class="login" name="id" placeholder="USER ID">
 								<input type="password" class="login" name="password" placeholder="PASSWORD">
 							</form>
-							<Button class="fadeIn fourth form_btn" onClick="location.href='join'">JOIN</Button>
-							<Button id="login_btn" class="fadeIn fourth form_btn">LOGIN</Button>
+							<input type="button" class="login_btn" onClick="location.href='join'" value="join">
+							<input type="button" class="login_btn" onclick="checkAuth();" value="login">
 							<p class="auth_msg hidden">Check user ID or Password.</p>
 						</div>
 					</div>

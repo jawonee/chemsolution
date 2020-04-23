@@ -1,7 +1,5 @@
 package net.chemsolution.website.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,12 +19,19 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	@Transactional
 	public int writeComment(CommentDto comment) {
-		boardDao.updateAnswerFlag(comment.getBoardId());
+		boardDao.onAnswerFlag(comment.getBoardId());
 		return commentDao.insertComment(comment);
 	}
 
 	@Override
-	public List<CommentDto> getComment(int boardNo) {
+	@Transactional
+	public int deleteComment(int boardNo) {
+		boardDao.offAnswerFlag(boardNo);
+		return commentDao.deleteComment(boardNo);
+	}
+
+	@Override
+	public CommentDto getComment(int boardNo) {
 		return commentDao.selectComment(boardNo);
 	}
 }

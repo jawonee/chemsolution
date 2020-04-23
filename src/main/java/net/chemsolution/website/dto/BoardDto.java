@@ -9,6 +9,7 @@ public class BoardDto {
 	private String content;
 	private Integer answerFlag;
 	private String createDate;
+	private String modifyDate;
 	public Integer getId() {
 		return id;
 	}
@@ -57,11 +58,16 @@ public class BoardDto {
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
 	}
+	public String getModifyDate() {
+		return modifyDate;
+	}
+	public void setModifyDate(String modifyDate) {
+		this.modifyDate = modifyDate;
+	}
 	@Override
 	public String toString() {
 		return "BoardDto [id=" + id + ", memberId=" + memberId + ", categoryId=" + categoryId + ", categoryName="
 				+ categoryName + ", subject=" + subject + ", content=" + content + ", answerFlag=" + answerFlag
-				+ ", createDate=" + createDate + "]";
+				+ ", createDate=" + createDate + ", modifyDate=" + modifyDate + "]";
 	}
-	
 }

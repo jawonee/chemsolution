@@ -10,13 +10,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/float.js"></script>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
 <link rel="stylesheet" type="text/css" href="css/layout.css">
 <link rel="stylesheet" type="text/css" href="css/sub.css">
 <link rel="stylesheet" type="text/css" href="css/etc.css">
-<link rel="stylesheet" type="text/css" href="css/float.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/menu/floating_menu.jsp"></c:import>
@@ -39,9 +37,9 @@
 
 				<article class="s0101 clear">
 					<div class="s0101_top_box">
-						<div class="text_box form_div">
-							<h5 class="info_msg">Welcome to Chemsolution!</h5>
-							<a href="login">go to Login page</a>
+						<div class="welcome_info">
+							<span class="welcome_msg">Welcome to Chemsolution!</span>
+							<br><a href="login">Go to Login page</a>
 						</div>
 					</div>
 				</article>

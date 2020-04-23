@@ -1,0 +1,268 @@
+@charset "EUC-KR";
+
+hr {
+	display: block;
+	width: 100%;
+	border: 1px solid;
+	margin: 10px 0;
+	color: #23ac38;
+	margin: 10px 0;
+}
+
+.info_msg, th {
+	text-transform: uppercase;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.no_items {
+	color: #888888;
+	height: 100px !important;
+	line-height: 100px !important;
+}
+
+.board_area {
+	width: 900px !important;
+	text-align: left;
+	padding: 0px !important;
+}
+
+.board_area ul {
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.search_area, .page_area {
+	margin-top: 10px;
+}
+
+.btn_area {
+	text-align: right;
+	margin-top: 10px;
+}
+
+.colum_group, th {
+	background: #e6e6e6;
+}
+
+.list_box li, .colum_group strong {
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+
+.colum_group>strong, .board_item>span {
+	display: inline-block;
+	border-right: 1px solid #ffffff;
+}
+
+.colum_group>.no, .board_item>.b_no {
+	width: 45px;
+}
+
+.colum_group>.category, .board_item>.b_category {
+	width: 85px;
+}
+
+.colum_group>.subject, .board_item>.b_subject {
+	display: inline-block;
+	width: 460px;
+}
+
+.b_subject {
+	text-align: left !important;
+}
+
+.b_subject>span, table .b_subject {
+	padding-left: 10px;
+}
+
+.colum_group>.id, .board_item>.b_id {
+	width: 91px;
+}
+
+.colum_group>.state, .board_item>.b_state {
+	width: 100px;
+}
+
+span.complete {
+	color: #23ac38;
+	font-weight: bold;
+}
+
+span.wait {
+	color: #8c8c8c;
+}
+
+.colum_group>.date, .board_item>.b_date {
+	border-right: 0px;
+	width: 100px;
+}
+
+.board_list>.board_item {
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.board_list>.board_item:hover {
+	background: #f7f7f7;
+}
+
+.page_area {
+	text-align: center;
+}
+
+.page_link:before, .page_link:after {
+	content: "\00a0";
+}
+
+a {
+	color: black;
+}
+
+a.present_page {
+	color: #23ac38;
+	font-weight: bold;
+}
+
+#search_form {
+	display: inline;
+}
+
+.write_btn {
+	float: right;
+}
+
+.addition_box {
+	margin-top: 14px;
+}
+
+.addition_box select, select.b_category, .addition_box input[type=text],
+	input.b_subject {
+	padding: 4px;
+	margin-right: 4px;
+	min-width: 80px;
+	height: auto;
+	line-height: normal;
+	border: #888888 1px solid;
+}
+
+#q_content table .input_group {
+	padding: 4px;
+	max-width: 800px;
+	border: #888888 1px solid;
+}
+
+.addition_box input[type=submit], .addition_box button, button, input[type=button],
+	input[type=submit] {
+	width: 79px;
+	padding: 4px 0;
+	background-color: #23ac38;
+	color: white;
+	text-transform: uppercase;
+	border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	border: 0;
+}
+
+.btn_area input {
+	margin: 10px 0 0 6px;
+}
+
+table .colum_group {
+	margin: 2px;
+	min-width: 90px;
+	font-weight: normal;
+	text-align: center;
+}
+
+table .input_group {
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+.input_group .b_subject, .input_group .b_content, .input_group .b_id,
+	.input_group .b_date {
+	width: 786px;
+	padding: 4px;
+}
+
+table .b_content {
+	height: 350px;
+	resize: none;
+	margin-bottom: -4px !important;
+	white-space: pre-line;
+}
+
+.item_area {
+	width: 900px;
+}
+
+span.reply {
+	display: block;
+	text-transform: uppercase;
+	color: #23ac38;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 10px 0 10px 5px;
+}
+
+img.reply {
+	width: 23px;
+	margin-left: 16px;
+}
+
+.comment ul {
+	margin: 0 0 15px 0;
+	float: right;
+	width: 830px;
+	padding: 10px;
+	background-color: #e6e6e6;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.comment li {
+	display: block;
+}
+
+.comment .c_delete {
+	text-decoration: underline;
+	float: right;
+}
+
+.comment .c_id, .comment .c_createDate {
+	display: inline;
+}
+
+.comment .c_content {
+	margin: 5px 0;
+	width: 806px;
+	min-height: 75px;
+	resize: none;
+}
+
+.comment li.c_content {
+	background-color: #ffffff;
+	padding: 9px 11px;
+	margin: 5px 1px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 0;
+	white-space: pre-line;
+}
+
+.comment .c_write {
+	width: 81px;
+	height: 81px;
+	position: absolute;
+	margin: 5px 8px;
+}

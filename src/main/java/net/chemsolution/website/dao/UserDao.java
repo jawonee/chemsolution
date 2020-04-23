@@ -1,11 +1,13 @@
 package net.chemsolution.website.dao;
 
+import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_ID;
+import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_INFO;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.sql.DataSource;
-
-import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_INFO;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -27,6 +29,15 @@ public class UserDao {
 	public UserDao(DataSource dataSource) {
 		this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 		this.insertAction = new SimpleJdbcInsert(dataSource).withTableName("member");
+	}
+
+	public boolean selectUserId(String id) {
+		Map<String, String> params = Collections.singletonMap("id", id);
+		if (jdbc.queryForObject(SELECT_USER_ID, params, Integer.class) == 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public UserDto selectUserInfo(UserDto loginUser) {

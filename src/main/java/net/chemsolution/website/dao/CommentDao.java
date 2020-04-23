@@ -1,13 +1,14 @@
 package net.chemsolution.website.dao;
 
+import static net.chemsolution.website.dao.DaoSqls.DELETE_COMMENT;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_COMMENT;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -34,8 +35,17 @@ public class CommentDao {
 		return insertAction.execute(param);
 	}
 
-	public List<CommentDto> selectComment(int boardNo) {
+	public int deleteComment(int boardNo) {
 		Map<String, ?> params = Collections.singletonMap("boardNo", boardNo);
-		return jdbc.query(SELECT_COMMENT, params, rowMapper);
+		return jdbc.update(DELETE_COMMENT, params);
+	}
+
+	public CommentDto selectComment(int boardNo) {
+		Map<String, ?> params = Collections.singletonMap("boardNo", boardNo);
+		try {
+			return jdbc.queryForObject(SELECT_COMMENT, params, rowMapper);
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 }
