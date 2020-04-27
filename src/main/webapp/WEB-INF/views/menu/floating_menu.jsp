@@ -15,11 +15,11 @@
 			<li><a class="home" title="home" href="/website"></a></li>
 			<c:choose>
 				<c:when test="${empty sessionScope.loginUser}">
-					<li><a class="join" title="join" href="/website/join"></a></li>
-					<li><a class="login" title="login" href="/website/login"></a></li>
+					<li><a class="join" title="join" href="/website/user/join"></a></li>
+					<li><a class="login" title="login" href="/website/user/login"></a></li>
 				</c:when>
 				<c:otherwise>
-					<li><a class="mypage" title="my page" href="/website/mypage"></a></li>
+					<li><a class="profile" title="profile" href="/website/user/profile"></a></li>
 					<li><a class="logout" title="logout" href="/website/user/logout"></a></li>
 				</c:otherwise>
 			</c:choose>

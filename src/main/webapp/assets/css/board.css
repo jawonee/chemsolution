@@ -9,6 +9,12 @@ hr {
 	margin: 10px 0;
 }
 
+.info_msg {
+	font-size: 17pt;
+	margin-bottom: 20px;
+	color: #23ac38;
+}
+
 .info_msg, th {
 	text-transform: uppercase;
 	-ms-user-select: none;
@@ -69,7 +75,7 @@ hr {
 
 .colum_group>.subject, .board_item>.b_subject {
 	display: inline-block;
-	width: 460px;
+	width: 450px;
 }
 
 .b_subject {
@@ -172,8 +178,8 @@ a.present_page {
 	border: 0;
 }
 
-.btn_area input {
-	margin: 10px 0 0 6px;
+.btn_area input[value=cancel] {
+	margin-right: 3px;
 }
 
 table .colum_group {
@@ -265,4 +271,99 @@ img.reply {
 	height: 81px;
 	position: absolute;
 	margin: 5px 8px;
+}
+
+#info_div {
+	width: 900px;
+}
+
+#info_div table {
+	border-spacing: 0px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+#info_div th {
+	width: 130px;
+	padding: 8px;
+	border: 1px solid #d9d9d9;
+	background-color: #e6e6e6;
+	border-bottom-width: 0;
+	text-align: left;
+}
+
+#info_div td {
+	border-right: 1px solid #d9d9d9;
+	border-top: 1px solid #d9d9d9;
+	padding: 8px;
+	width: 750px;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+#info_div th img {
+	width: 7px;
+	margin: 0 0 3px 3px;
+}
+
+#info_div .info_group input {
+	width: 210px;
+	height: 22px;
+	line-height: 22px;
+	padding: 2px 6px;
+	border: 1px solid #d9d9d9;
+}
+
+#info_div .info_group input[type="number"], select.tel {
+	width: 50px;
+	height: 22px;
+	line-height: 22px;
+	padding: 2px 6px;
+	border: 1px solid #d9d9d9;
+}
+
+input [type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
+	{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+select.tel {
+	width: 67px;
+	height: 28px;
+}
+
+#info_div input[type=button], #info_div input[type=submit] {
+	margin-top: 3px;
+	font-size: 10pt;
+	width: 100px;
+	height: 25px;
+}
+
+#info_div input[type=button].u_withdraw {
+	float: left;
+	color: black;
+	background-color: #e6e6e6;
+}
+
+#info_div .valid_msg {
+	margin-left: 4px;
+	font-size: 9pt;
+}
+
+.required {
+	margin-bottom: 5px;
+}
+
+.required img {
+	width: 9px;
+}
+
+.required span {
+	font-size: 11pt;
 }

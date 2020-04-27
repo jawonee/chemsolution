@@ -10,13 +10,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/check.js"></script>
+<script type="text/javascript" src="../js/check.js"></script>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
-<link rel="stylesheet" type="text/css" href="css/layout.css">
-<link rel="stylesheet" type="text/css" href="css/sub.css">
-<link rel="stylesheet" type="text/css" href="css/etc.css">
-<link rel="stylesheet" type="text/css" href="css/form.css">
+<link rel="stylesheet" type="text/css" href="../css/layout.css">
+<link rel="stylesheet" type="text/css" href="../css/sub.css">
+<link rel="stylesheet" type="text/css" href="../css/etc.css">
+<link rel="stylesheet" type="text/css" href="../css/form.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/menu/floating_menu.jsp"></c:import>
@@ -34,12 +34,12 @@
 				<h3 class="h3_label">LOGIN</h3>
 				<div class="process">
 					<span class="home">HOME</span> <span class="arrow"><img
-						src="img/arrow.png" alt="" /></span> <span class="path">LOGIN</span>
+						src="../img/arrow.png" alt="" /></span> <span class="path">LOGIN</span>
 				</div>
 
 				<article class="s0101 clear">
 					<div class="s0101_top_box">
-						<div class="text_box form_div">
+						<div class="form_div">
 							<h5 class="info_msg">Please enter your ID and password.</h5>
 							<form class="login_form">
 								<input type="text" class="login" name="id" placeholder="USER ID">

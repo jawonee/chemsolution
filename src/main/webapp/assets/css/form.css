@@ -1,35 +1,11 @@
 input[type=button], input[type=submit], input[type=reset] {
 	width: 205px;
-	background-color: #23ac38;
 	color: white;
-	text-align: center;
-	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 15px;
-	-webkit-border-radius: 3px 3px 3px 3px;
-	border-radius: 3px 3px 3px 3px;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-	margin: 20px 10px;
+	margin: 10px 10px;
 	padding: 20px;
 	border: 0;
-}
-
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover
-	{
-	background-color: #888888;
-}
-
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active
-	{
-	-moz-transform: scale(0.95);
-	-webkit-transform: scale(0.95);
-	-o-transform: scale(0.95);
-	-ms-transform: scale(0.95);
-	transform: scale(0.95);
 }
 
 input.login, input.join, textarea.q_text {
@@ -43,11 +19,6 @@ input.login, input.join, textarea.q_text {
 	margin: 6px;
 	width: 86%;
 	border: 2px solid #f6f6f6;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
 	-webkit-border-radius: 3px 3px 3px 3px;
 	border-radius: 3px 3px 3px 3px;
 }
@@ -73,6 +44,10 @@ p.auth_msg {
 	font-size: 12pt !important;
 	font-weight: bold !important;
 	color: red !important;
+}
+
+.login_form {
+	margin: 20px 0 10px 0;
 }
 
 .join_div, .form_area, .board_area {
@@ -122,7 +97,6 @@ p.auth_msg {
 }
 
 .info_msg {
-	margin-bottom: 20px;
 	color: #23ac38;
 	font-size: 18pt;
 }
@@ -139,7 +113,7 @@ p.auth_msg {
 
 .form_div table {
 	width: 600px;
-	margin: 40px 0 10px 0;
+	margin: 20px;
 }
 
 .form_div table td {

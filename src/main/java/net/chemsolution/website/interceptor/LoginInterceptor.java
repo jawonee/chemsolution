@@ -17,7 +17,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			UserDto loginUser = (UserDto) session.getAttribute("loginUser");
 			if (loginUser == null) {
 				session.setAttribute("prevPage", request.getRequestURL());
-				response.sendRedirect("/website/login");
+				response.sendRedirect("/website/user/login");
 				return false;
 			}
 			return true;

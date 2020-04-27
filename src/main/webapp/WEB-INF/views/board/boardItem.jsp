@@ -46,15 +46,6 @@
 					<div class="item_area">
 						<div id="q_content">
 							<table>
-<%-- 								<c:choose>
-									<c:when test="${boardItem.answerFlag eq 1}">
-										<li class="q_answer">답변완료</li>
-									</c:when>
-									<c:otherwise>
-										<li class="q_answer">답변대기중</li>
-									</c:otherwise>
-								</c:choose> --%>
-								
 								<tr>
 									<th class="colum_group">id</th>
 									<td class="input_group"><span class="b_id">${boardItem.memberId }</span></td>

@@ -44,7 +44,7 @@
 				</div>
 				<article class="s0101 clear">
 					<div class="s0101_top_box">
-						<div class="text_box board_area">
+						<div class="board_area">
 							<h5 class="info_msg">${catName}
 								<c:if test="${catName ne 'notice' && catName ne 'etc'}"> Inquiry</c:if>
 							</h5>

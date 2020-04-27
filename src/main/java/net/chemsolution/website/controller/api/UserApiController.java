@@ -1,11 +1,9 @@
 package net.chemsolution.website.controller.api;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +23,7 @@ public class UserApiController {
 	UserService userService;
 
 	@PostMapping(value = "/login/authCheck")
-	public boolean checkUserInfo(@ModelAttribute UserDto loginUser, HttpSession session, HttpServletResponse res)
-			throws IOException {
+	public boolean checkUserInfo(@ModelAttribute UserDto loginUser, HttpSession session) {
 		UserDto user = userService.getUserInfo(loginUser);
 		if (user != null) {
 			session.setAttribute("loginUser", user);
@@ -63,40 +60,43 @@ public class UserApiController {
 			break;
 		case "name":
 			if (!Pattern.compile(nReg).matcher(value).matches()) {
-				map.put("msg", "한글 2~10자");
+				map.put("msg", "한글, 2~10자");
 			}
 			break;
 		case "tel":
 			if (!Pattern.compile(tReg).matcher(value).matches()) {
-				map.put("msg", "010 - ***(*) - **** 형식");
+				map.put("msg", "올바른 휴대전화 번호를 입력하세요.");
 			}
 			break;
 		case "email":
 			if (!Pattern.compile(eReg).matcher(value).matches()) {
-				map.put("msg", "***@***.*** 형식");
+				map.put("msg", "올바른 이메일을 입력하세요.");
 			}
 			break;
 		}
+//		if (map.get("msg") == null) {
+//			map.put("msg", "");
+//			map.put("src", "img/approved.png");
+//		} else {
+//			map.put("src", "img/non_approved.png");
+//		}
 		if (map.get("msg") == null) {
 			map.put("msg", "");
-			map.put("src", "img/approved.png");
-		} else {
-			map.put("src", "img/non_approved.png");
 		}
 		return map;
 
-		/*
-		 * switch (key) { case "id": if (userService.checkIdDuplicatie(value)) { return
-		 * "이미 사용중인 아이디 입니다."; } else { if
-		 * (!Pattern.compile(idValid).matcher(value).matches()) { return
-		 * "영문소문자/숫자, 4~16자"; } else { return "사용 가능한 아이디 입니다."; } } case "password": if
-		 * (!Pattern.compile(pValid).matcher(value).matches()) { return
-		 * "영문소문자/숫자, 4~16자"; } break; case "name": if
-		 * (!Pattern.compile(nReg).matcher(value).matches()) { return "한글 2~10자"; }
-		 * break; case "tel": if (!Pattern.compile(tReg).matcher(value).matches()) {
-		 * return "010 - ***(*) - **** 형식"; } break; case "email": if
-		 * (!Pattern.compile(eReg).matcher(value).matches()) { return "***@***.*** 형식";
-		 * } break; } return null;
-		 */
+	}
+
+	@PostMapping(value = "/join/passwordCheck")
+	public Map<String, Object> checkPassword(@RequestBody Map<String, String> password) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		String origin = password.get("origin");
+		String check = password.get("check");
+		if (check.equals(origin)) {
+			map.put("msg", "");
+		} else {
+			map.put("msg", "비밀번호가 일치하지 않습니다.");
+		}
+		return map;
 	}
 }

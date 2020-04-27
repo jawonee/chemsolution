@@ -32,14 +32,15 @@
 							<li><a href="/website/product/s2_9">ABRASIVE</a></li>
 						</ul></li>
 					<li><a href="/website/contact">CONTACT US</a></li>
-					<li><c:choose>
+					<li><a href="/website/board">COMMUNITY</a>
+<%-- 						<c:choose>
 							<c:when test="${empty sessionScope.loginUser}">
-								<a href="/website/login">COMMUNITY</a>
+								<a href="/website/user/login">COMMUNITY</a>
 							</c:when>
 							<c:otherwise>
 								<a href="/website/board">COMMUNITY</a>
 							</c:otherwise>
-						</c:choose>
+						</c:choose> --%>
 						<ul>
 							<li><a href="/website/board/notice">NOTICE</a></li>
 							<li><a href="/website/board/business">BUSINESS INQUIRY</a></li>

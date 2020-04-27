@@ -1,0 +1,29 @@
+@charset "EUC-KR";
+
+th {
+	background: #e6e6e6;
+	text-transform: uppercase;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.colum_group {
+	margin-left: 10px;
+	margin: 2pxo
+	min-width: 90px;
+	font-weight: normal;
+	text-align: center;
+}
+
+table .info_group {
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+.item_area {
+	width: 900px;
+}

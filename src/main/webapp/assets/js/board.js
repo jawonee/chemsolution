@@ -13,5 +13,11 @@ $(document).ready(function() {
 				location.href = pathName + "/delete";
 			}
 		});
+
+		$('input.u_withdraw').click(function() {
+			if (confirm("회원 탈퇴 하시겠습니까?")) {
+				location.href = "withdraw";
+			}
+		});
 	});
 });

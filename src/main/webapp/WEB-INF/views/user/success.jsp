@@ -12,9 +12,9 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
-<link rel="stylesheet" type="text/css" href="css/layout.css">
-<link rel="stylesheet" type="text/css" href="css/sub.css">
-<link rel="stylesheet" type="text/css" href="css/etc.css">
+<link rel="stylesheet" type="text/css" href="../css/layout.css">
+<link rel="stylesheet" type="text/css" href="../css/sub.css">
+<link rel="stylesheet" type="text/css" href="../css/etc.css">
 </head>
 <body>
 	<c:import url="/WEB-INF/views/menu/floating_menu.jsp"></c:import>
@@ -32,7 +32,7 @@
 				<h3 class="h3_label">JOIN</h3>
 				<div class="process">
 					<span class="home">HOME</span> <span class="arrow"><img
-						src="img/arrow.png" alt="" /></span> <span class="path">JOIN</span>
+						src="../img/arrow.png" alt="" /></span> <span class="path">JOIN</span>
 				</div>
 
 				<article class="s0101 clear">

@@ -1,8 +1,12 @@
 package net.chemsolution.website.dao;
 
 public class DaoSqls {
-	public static final String SELECT_USER_INFO = "select * from member where id=:id and password=:pw";
+	public static final String SELECT_USER_INFO = "select id, name, tel, email, grade from member where id=:id and password=:pw and delete_flag=0";
+	public static final String SELECT_USER = "select id, name, tel, email, grade from member where id=:id and delete_flag=0";
 	public static final String SELECT_USER_ID = "select count(*) from member where id=:id";
+	public static final String DELETE_USER = "update member set delete_flag=1 where id = :id";
+	public static final String UPDATE_USER = "update member set tel=:tel, email=:email where id = :id";
+	public static final String UPDATE_USER_AND_PW = "update member set password=:pw, tel=:tel, email=:email where id = :id";
 	public static final String SELECT_BOARD_LIST = "select board.id, member_id, subject, content, category_id, date_format(create_date, '%Y.%m.%d') as create_date, category.name as category_name, answer_Flag from board join category on board.category_id = category.id and category.name=:catName order by id desc limit :from, :count";
 	public static final String SELECT_COUNT = "select count(*) from board join category on board.category_id = category.id and category.name =:catName";
 	public static final String SELECT_BOARD_ITEM = "select board.id, member_id, subject, content, answer_flag, category_id, date_format(create_date, '%Y.%m.%d') as create_date, date_format(modify_date, '%Y.%m.%d') as modify_date, category.name as category_name from board join category on board.category_id = category.id and board.id =:boardNo";

@@ -24,12 +24,22 @@ import net.chemsolution.website.service.BoardService;
 import net.chemsolution.website.service.CommentService;
 
 @Controller
-@RequestMapping(path = "/board")
+@RequestMapping(path = { "/board", "/boardWrite" })
 public class BoardController {
 	@Autowired
 	BoardService boardService;
 	@Autowired
 	CommentService commentService;
+
+	@GetMapping
+	String showBoardPage(HttpServletRequest res, HttpSession session) {
+		String requestPath = res.getServletPath();
+		if (requestPath.equalsIgnoreCase("write")) {
+			return "board/boardWrite";
+		} else {
+			return "redirect:/board/notice";
+		}
+	}
 
 	@GetMapping(value = { "/{catName}" })
 	public String getBoardList(@PathVariable("catName") String catName,
@@ -58,6 +68,12 @@ public class BoardController {
 		return "redirect:/board/article/" + boardId;
 	}
 
+	@PutMapping(value = { "/submit" })
+	public String modifyBoardItem(@ModelAttribute BoardDto question) {
+		boardService.modifyBoardItem(question);
+		return "redirect:/board/article/" + question.getId();
+	}
+
 	@GetMapping(value = { "/article/{boardNo}" })
 	public String getBoardItem(@PathVariable("boardNo") int boardNo, HttpServletRequest req, ModelMap model) {
 		model.addAttribute("boardItem", boardService.getBoardItem(boardNo));
@@ -78,11 +94,5 @@ public class BoardController {
 	public String showBoardModifyPage(@PathVariable("boardNo") int boardNo, ModelMap model) {
 		model.addAttribute("boardItem", boardService.getBoardItem(boardNo));
 		return "board/boardWrite";
-	}
-
-	@PutMapping(value = { "/submit" })
-	public String modifyBoardItem(@ModelAttribute BoardDto question) {
-		boardService.modifyBoardItem(question);
-		return "redirect:/board/article/" + question.getId();
 	}
 }

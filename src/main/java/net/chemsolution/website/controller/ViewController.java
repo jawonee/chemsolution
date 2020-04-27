@@ -1,6 +1,5 @@
 package net.chemsolution.website.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -17,28 +16,6 @@ public class ViewController {
 	@GetMapping(path = "/contact")
 	String showContactUsPage() {
 		return "contact";
-	}
-
-	@GetMapping(path = { "/join", "/success", "/login", "/mypage" })
-	String showUserPage(HttpServletRequest res, HttpSession session) {
-		String requestPath = res.getServletPath();
-		if (session.getAttribute("loginUser") != null && !requestPath.contains("mypage")) {
-			return "redirect:/";
-		} else if (session.getAttribute("loginUser") == null && requestPath.contains("mypage")) {
-			return "redirect:/login";
-		} else {
-			return "user" + requestPath;
-		}
-	}
-
-	@GetMapping(path = "/board")
-	String showBoardPage() {
-		return "redirect:/board/notice";
-	}
-
-	@GetMapping(path = "/boardWrite")
-	String showBoardWritePage() {
-		return "board/boardWrite";
 	}
 
 	@GetMapping(path = { "/product", "/product/{name}" })

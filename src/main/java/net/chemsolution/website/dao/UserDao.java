@@ -1,7 +1,11 @@
 package net.chemsolution.website.dao;
 
+import static net.chemsolution.website.dao.DaoSqls.DELETE_USER;
+import static net.chemsolution.website.dao.DaoSqls.SELECT_USER;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_ID;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_INFO;
+import static net.chemsolution.website.dao.DaoSqls.UPDATE_USER;
+import static net.chemsolution.website.dao.DaoSqls.UPDATE_USER_AND_PW;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,5 +60,25 @@ public class UserDao {
 		newUser.setDeleteFlag(0);
 		SqlParameterSource param = new BeanPropertySqlParameterSource(newUser);
 		return insertAction.execute(param);
+	}
+
+	public int deleteUser(String id) {
+		Map<String, String> params = Collections.singletonMap("id", id);
+		return jdbc.update(DELETE_USER, params);
+	}
+
+	public UserDto updateUser(UserDto loginUser) {
+		Map<String, String> params = new HashMap<>();
+		params.put("id", loginUser.getId());
+		params.put("tel", loginUser.getTel());
+		params.put("email", loginUser.getEmail());
+		if (loginUser.getPassword() != null) {
+			params.put("pw", loginUser.getPassword());
+			jdbc.update(UPDATE_USER_AND_PW, params);
+		} else {
+			jdbc.update(UPDATE_USER, params);
+		}
+		// Map<String, String> id = Collections.singletonMap("id", loginUser.getId());
+		return jdbc.queryForObject(SELECT_USER, params, rowMapper);
 	}
 }

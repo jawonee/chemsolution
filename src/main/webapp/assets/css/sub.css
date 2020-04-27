@@ -1,4 +1,3 @@
-
 #sub_visual {
 	display: block;
 	height: 124px;
@@ -21,15 +20,11 @@
 	padding-right: 20px;
 }
 
-.text_box>h5 {
+.text_box>h4 {
+	margin-top: 30px;
 	font-size: 26px;
 	color: #23ac38;
 	margin-bottom: 5px;
-}
-
-.text_box>.info_msg {
-	font-size: 19px !important;
-	margin-bottom: 20px !important;
 }
 
 .text_box>p {
@@ -835,6 +830,7 @@ table2_9_2>thead>tr>td:first-child {
 }
 
 #sub_layout>#ln_area>.h2_label {
+	text-transform: uppercase;
 	font-family: 'nanumgothic';
 	width: 240px;
 	height: 115px;
@@ -873,6 +869,7 @@ table2_9_2>thead>tr>td:first-child {
 }
 
 #sub_layout>#ln_area>.ln>li.current>a {
+	text-transform: uppercase;
 	color: #333;
 	background: url('/website/assets/img/ln_bg.png') #f7f7f7 no-repeat 95%
 		center;
@@ -924,6 +921,7 @@ table2_9_2>thead>tr>td:first-child {
 }
 
 #sub_layout>#sub_cnt .feedback>.h3_label {
+	text-transform: uppercase;
 	float: left;
 	margin-bottom: 20px;
 	font-size: 30px;
@@ -961,6 +959,7 @@ article.s0101 {
 	display: table;
 	margin-left: auto;
 	margin-right: auto;
+	font-family:NanumGothicWebR;
 }
 
 .path {
@@ -968,20 +967,47 @@ article.s0101 {
 }
 
 .welcome_info {
-	text-align:center;
-	margin-top:30px
+	text-align: center;
+	margin-top: 30px
 }
 
 .welcome_info a {
-	display:block;
-	margin-top:15px;
+	display: block;
+	margin-top: 15px;
 	text-decoration: underline;
-	font-size:12pt;
+	font-size: 12pt;
 	color: black;
 }
 
 .welcome_msg {
-	font-size:17pt;
-	font-weight:bold;
-	color:#23ac38
+	font-size: 17pt;
+	font-weight: bold;
+	color: #23ac38
+}
+
+input[type=button], input[type=submit], input[type=reset], button.write_btn
+	{
+	background-color: #23ac38;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover,
+	button.write_btn:hover {
+	background-color: #888888 !important;
+	color: white !important;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active,
+	button.write_btn:active {
+	-moz-transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	-o-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
 }
