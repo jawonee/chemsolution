@@ -57,8 +57,6 @@ public class UserController {
 
 	@PutMapping
 	public String modifyUserInfo(@ModelAttribute UserDto userDto, HttpSession session) {
-		UserDto loginUser = (UserDto) session.getAttribute("loginUser");
-		userDto.setId(loginUser.getId());
 		userDto.setTel(userDto.getTel1(), userDto.getTel2(), userDto.getTel3());
 		session.setAttribute("loginUser", userService.modifyUserInfo(userDto));
 		return "redirect:/user/profile";

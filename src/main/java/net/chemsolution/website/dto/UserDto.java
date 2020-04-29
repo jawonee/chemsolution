@@ -11,6 +11,7 @@ public class UserDto {
 	private String email;
 	private Integer grade;
 	private Integer deleteFlag;
+	private String modifyDate;
 
 	public String getId() {
 		return id;
@@ -95,10 +96,19 @@ public class UserDto {
 	public void setDeleteFlag(Integer deleteFlag) {
 		this.deleteFlag = deleteFlag;
 	}
+	
+	public String getModifyDate() {
+		return modifyDate;
+	}
+
+	public void setModifyDate(String modifyDate) {
+		this.modifyDate = modifyDate;
+	}
 
 	@Override
 	public String toString() {
-		return "UserDto [id=" + id + ", password=" + password + ", name=" + name + ", tel=" + tel + ", email=" + email
-				+ ", grade=" + grade + ", deleteFlag=" + deleteFlag + "]";
+		return "UserDto [id=" + id + ", password=" + password + ", name=" + name + ", tel=" + tel + ", tel1=" + tel1
+				+ ", tel2=" + tel2 + ", tel3=" + tel3 + ", email=" + email + ", grade=" + grade + ", deleteFlag="
+				+ deleteFlag + ", modifyDate=" + modifyDate + "]";
 	}
 }

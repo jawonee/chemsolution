@@ -1,12 +1,12 @@
 package net.chemsolution.website.dao;
 
+import static net.chemsolution.website.dao.DaoSqls.COUNT_BOARD;
 import static net.chemsolution.website.dao.DaoSqls.DELETE_BOARD_ITEM;
 import static net.chemsolution.website.dao.DaoSqls.SEARCH_BOARD_LIST_CONTENT;
 import static net.chemsolution.website.dao.DaoSqls.SEARCH_BOARD_LIST_SUBJECT;
 import static net.chemsolution.website.dao.DaoSqls.SEARCH_BOARD_LIST_USERID;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_BOARD_ITEM;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_BOARD_LIST;
-import static net.chemsolution.website.dao.DaoSqls.SELECT_COUNT;
 import static net.chemsolution.website.dao.DaoSqls.UPDATE_ANSWER_FLAG_OFF;
 import static net.chemsolution.website.dao.DaoSqls.UPDATE_ANSWER_FLAG_ON;
 import static net.chemsolution.website.dao.DaoSqls.UPDATE_BOARD_ITEM;
@@ -43,7 +43,7 @@ public class BoardDao {
 	public int getCount(String catName) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("catName", catName);
-		return jdbc.queryForObject(SELECT_COUNT, params, Integer.class);
+		return jdbc.queryForObject(COUNT_BOARD, params, Integer.class);
 	}
 
 	public List<BoardDto> selectBoardList(String catName, int page, String key, String value) {

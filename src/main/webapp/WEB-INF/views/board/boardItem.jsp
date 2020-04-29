@@ -53,7 +53,7 @@
 								<tr>
 									<th class="colum_group">date</th>
 									<td class="input_group"><span class="b_date">${boardItem.createDate }</span><c:if test="${boardItem.createDate ne boardItem.modifyDate}">
-									<span class="q_modifyDate">(Modified on ${boardItem.modifyDate })</span></c:if></td>
+									<span class="q_modifyDate">( Modified on ${boardItem.modifyDate } )</span></c:if></td>
 								</tr>
 								<tr>
 									<th class="colum_group">subject</th>
@@ -69,7 +69,6 @@
 						<div class="comment">
 							<c:if test="${not empty comment && boardItem.categoryName ne 'notice'}">
 								<span class="reply">comment</span>
-								<img class="reply" src="../../img/reply.png" alt="" />
 								<ul>
 									<li class="c_id">${comment.memberId }</li>
 									<c:if test="${sessionScope.loginUser.grade eq 1}">

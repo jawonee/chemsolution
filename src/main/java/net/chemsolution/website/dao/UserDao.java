@@ -1,11 +1,11 @@
 package net.chemsolution.website.dao;
 
+import static net.chemsolution.website.dao.DaoSqls.COUNT_USER;
 import static net.chemsolution.website.dao.DaoSqls.DELETE_USER;
 import static net.chemsolution.website.dao.DaoSqls.SELECT_USER;
-import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_ID;
-import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_INFO;
+import static net.chemsolution.website.dao.DaoSqls.SELECT_USER_WITH_PW;
 import static net.chemsolution.website.dao.DaoSqls.UPDATE_USER;
-import static net.chemsolution.website.dao.DaoSqls.UPDATE_USER_AND_PW;
+import static net.chemsolution.website.dao.DaoSqls.UPDATE_USER_WITH_PW;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ public class UserDao {
 
 	public boolean selectUserId(String id) {
 		Map<String, String> params = Collections.singletonMap("id", id);
-		if (jdbc.queryForObject(SELECT_USER_ID, params, Integer.class) == 1) {
+		if (jdbc.queryForObject(COUNT_USER, params, Integer.class) == 1) {
 			return true;
 		} else {
 			return false;
@@ -49,7 +49,7 @@ public class UserDao {
 		params.put("id", loginUser.getId());
 		params.put("pw", loginUser.getPassword());
 		try {
-			return jdbc.queryForObject(SELECT_USER_INFO, params, rowMapper);
+			return jdbc.queryForObject(SELECT_USER_WITH_PW, params, rowMapper);
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
@@ -70,15 +70,15 @@ public class UserDao {
 	public UserDto updateUser(UserDto loginUser) {
 		Map<String, String> params = new HashMap<>();
 		params.put("id", loginUser.getId());
+		params.put("name", loginUser.getName());
 		params.put("tel", loginUser.getTel());
 		params.put("email", loginUser.getEmail());
-		if (loginUser.getPassword() != null) {
+		if (loginUser.getPassword() != "") {
 			params.put("pw", loginUser.getPassword());
-			jdbc.update(UPDATE_USER_AND_PW, params);
+			jdbc.update(UPDATE_USER_WITH_PW, params);
 		} else {
 			jdbc.update(UPDATE_USER, params);
 		}
-		// Map<String, String> id = Collections.singletonMap("id", loginUser.getId());
 		return jdbc.queryForObject(SELECT_USER, params, rowMapper);
 	}
 }

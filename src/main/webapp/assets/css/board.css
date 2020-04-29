@@ -218,7 +218,7 @@ span.reply {
 	color: #23ac38;
 	font-size: 16px;
 	font-weight: bold;
-	margin: 10px 0 10px 5px;
+	margin: 8px 5px;
 }
 
 img.reply {
@@ -229,11 +229,9 @@ img.reply {
 .comment ul {
 	margin: 0 0 15px 0;
 	float: right;
-	width: 830px;
+	width: 880px;
 	padding: 10px;
 	background-color: #e6e6e6;
-	border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
 }
 
 .comment li {
@@ -258,12 +256,9 @@ img.reply {
 
 .comment li.c_content {
 	background-color: #ffffff;
-	padding: 9px 11px;
-	margin: 5px 1px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 0;
-	white-space: pre-line;
+	padding: 6px 8px;
+	margin-top:9px;
+	width: auto;
 }
 
 .comment .c_write {

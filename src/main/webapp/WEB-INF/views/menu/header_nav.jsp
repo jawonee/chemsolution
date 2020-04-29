@@ -33,20 +33,17 @@
 						</ul></li>
 					<li><a href="/website/contact">CONTACT US</a></li>
 					<li><a href="/website/board">COMMUNITY</a>
-<%-- 						<c:choose>
-							<c:when test="${empty sessionScope.loginUser}">
-								<a href="/website/user/login">COMMUNITY</a>
-							</c:when>
-							<c:otherwise>
-								<a href="/website/board">COMMUNITY</a>
-							</c:otherwise>
-						</c:choose> --%>
-						<ul>
+ 						<ul>
 							<li><a href="/website/board/notice">NOTICE</a></li>
 							<li><a href="/website/board/business">BUSINESS INQUIRY</a></li>
 							<li><a href="/website/board/product">PRODDUCT INQUIRY</a></li>
 							<li><a href="/website/board/etc">ETC</a></li>
-						</ul></li>
+						</ul> 
+<!-- 						<ul>
+							<li><a href="/website/board/notice">NOTICE</a></li>
+							<li><a href="/website/board/qa">Q & A</a></li>
+						</ul> -->
+					</li>
 				</ul>
 			</nav>
 		</div>

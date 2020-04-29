@@ -57,7 +57,7 @@
 							<div class="required">
 								<img src="../img/asterisk.png" alt="Required"><span>Required</span>
 							</div>
-							<form action="./" class="user_form" method="post">
+							<form action="./" class="user_form" method="post" autocomplete="off">
 							<c:if test="${login}">
 								<input type="hidden" name="_method" value="put" />
 							</c:if>
@@ -65,8 +65,7 @@
 								<tr>
 									<th class="colum_group">id<img src="../img/asterisk.png" alt="Required"></th>
 									<td class="info_group">
-										
-										<input type="text" class="join" name="id" <c:if test="${login}">value="${sessionScope.loginUser.id}" disabled</c:if>>
+										<input type="text" class="join" name="id" <c:if test="${login}">value="${sessionScope.loginUser.id}" readonly</c:if>>
 										<span class="valid_msg">영문소문자/숫자 조합, 4~16자</span>
 									</td>
 								</tr>

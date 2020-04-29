@@ -22,7 +22,7 @@ public class UserApiController {
 	@Autowired
 	UserService userService;
 
-	@PostMapping(value = "/login/authCheck")
+	@PostMapping(value = "/authCheck")
 	public boolean checkUserInfo(@ModelAttribute UserDto loginUser, HttpSession session) {
 		UserDto user = userService.getUserInfo(loginUser);
 		if (user != null) {
@@ -33,11 +33,12 @@ public class UserApiController {
 		}
 	}
 
-	@PostMapping(value = "/join/validCheck")
+	@PostMapping(value = "/validCheck")
 	public Map<String, Object> validateInputValue(@RequestBody Map<String, String> input) {
 		String key = input.get("key");
 		String value = input.get("value");
-		String idAndPassReg = "^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{4,16}$";
+		String idReg = "^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{4,16}$";
+		String pwReg = "^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{4,16}$";
 		String nReg = "^[가-힣]{2,10}$";
 		String tReg = "^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-([0-9]{3,4})-([0-9]{4})$";
 		String eReg = "^([0-9a-zA-Z_\\.-]+)@([0-9a-zA-Z_-]+)(\\.[0-9a-zA-Z_-]+){1,2}$";
@@ -48,13 +49,13 @@ public class UserApiController {
 			if (userService.checkIdDuplicatie(value)) {
 				map.put("msg", "이미 사용중인 아이디 입니다.");
 			} else {
-				if (!Pattern.compile(idAndPassReg).matcher(value).matches()) {
+				if (!Pattern.compile(idReg).matcher(value).matches()) {
 					map.put("msg", "영문소문자/숫자 조합, 4~16자");
 				}
 			}
 			break;
 		case "password":
-			if (!Pattern.compile(idAndPassReg).matcher(value).matches()) {
+			if (!Pattern.compile(pwReg).matcher(value).matches()) {
 				map.put("msg", "영문소문자/숫자 조합, 4~16자");
 			}
 			break;
@@ -82,12 +83,15 @@ public class UserApiController {
 //		}
 		if (map.get("msg") == null) {
 			map.put("msg", "");
+			map.put("result", true);
+		} else {
+			map.put("result", false);
 		}
-		return map;
 
+		return map;
 	}
 
-	@PostMapping(value = "/join/passwordCheck")
+	@PostMapping(value = "/passwordCheck")
 	public Map<String, Object> checkPassword(@RequestBody Map<String, String> password) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String origin = password.get("origin");

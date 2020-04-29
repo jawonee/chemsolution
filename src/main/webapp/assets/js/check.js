@@ -1,13 +1,28 @@
-var validCheckFlag = false;
+var flag = {
+	password : false,
+	name : false,
+	tel : false,
+	email : false
+};
+var validFlag = false;
 $(function() {
-	$("input.join").not(".check")
-			.on("blur change keyup paste", checkValidation);
-	$("input.check").on("blur change keyup paste", checkPassword);
+	$("input.join:not([readonly])").not(".check").on("blur keyup", checkValidation);
+	$("input.check").on("blur keyup", checkPassword);
 	$("input.u_submit").click(function(e) {
 		e.preventDefault();
-		if (validCheckFlag) {
+		$("input.join:not([readonly])").not(".check").blur();
+		if ($("input[type=password]").val() == "") {
+			flag.password = true;
+		}
+		for (key in flag) {
+			validFlag = validFlag && flag[key];
+		}
+		if (validFlag) {
 			var form = $('form.user_form')[0];
 			form.submit();
+			if ($("input[name='_method']")) {
+				alert("회원정보가 수정되었습니다.");
+			}
 		} else {
 			alert("입력값을 확인해주세요.");
 		}
@@ -18,7 +33,7 @@ function checkAuth() {
 	var form = $('form.login_form')[0];
 	var formData = new FormData(form);
 	jQuery.ajax({
-		url : "login/authCheck",
+		url : "authCheck",
 		method : "post",
 		data : formData,
 		dataType : 'json',
@@ -48,7 +63,6 @@ function checkValidation() {
 	var key = this.name;
 	var value = this.value;
 	var checkKey = this;
-
 	if (this.name.includes("tel")) {
 		key = "tel";
 		value = $("select.tel option:selected").val();
@@ -61,17 +75,13 @@ function checkValidation() {
 		value : value
 	}
 	jQuery.ajax({
-		url : "join/validCheck",
+		url : "validCheck",
 		method : "post",
 		data : JSON.stringify(input),
 		dataType : 'json',
 		contentType : "application/json; charset=UTF-8",
 		success : function(valid) {
-			if (valid.msg != "") {
-				validCheckFlag = false;
-			} else {
-				validCheckFlag = true;
-			}
+			flag[key] = valid.result;
 			$(checkKey).parent().children("span.valid_msg").text(valid.msg);
 		},
 		error : function(xhr, status, error) {
@@ -90,7 +100,7 @@ function checkPassword() {
 		check : this.value
 	}
 	jQuery.ajax({
-		url : "join/passwordCheck",
+		url : "passwordCheck",
 		method : "post",
 		data : JSON.stringify(password),
 		dataType : 'json',
