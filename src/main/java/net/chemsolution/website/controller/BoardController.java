@@ -34,7 +34,7 @@ public class BoardController {
 	@GetMapping
 	String showBoardPage(HttpServletRequest res, HttpSession session) {
 		String requestPath = res.getServletPath();
-		if (requestPath.equalsIgnoreCase("write")) {
+		if (requestPath.contains("boardWrite")) {
 			return "board/boardWrite";
 		} else {
 			return "redirect:/board/notice";
